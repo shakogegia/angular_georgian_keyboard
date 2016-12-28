@@ -17,8 +17,11 @@
 
 
 	<div class="container">
-		<h1>Demo</h1>
-		<div class="col-md-6">
+		
+		<h1>Angular Directive for Georgian Keyboard</h1>
+		<hr>
+
+		<div class="col-md-4">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					Form
@@ -35,7 +38,44 @@
 							<label>{{ input1 }}</label>
 							<input type="text" class="form-control" name="input1" ng-model="input1" ng-keyup="onChange()" geo-kbd="enabled">
 						</div>
+						<div class="form-group">
+							<label>{{ input2 }}</label>
+							<textarea class="form-control" ng-model="input2" geo-kbd="enabled"></textarea>
+						</div>
 					</form>
+				</div>
+			</div>
+			<a href="https://github.com/shakogegia/angular_georgian_keyboard" class="btn btn-primary"><i class="glyphicon glyphicon-save btn-lg"></i>View Project on github</a>
+		</div>
+		<div class="col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Docs
+				</div>
+				<div class="panel-body">
+					<h2>Angular Directive for Georgian Keyboard</h2>
+
+					A simple angular directive for geo kbd.
+
+					<h2>Install</h2>
+
+					<p>Install with bower</p>
+
+					<pre>bower install angular_georgian_keyboard</pre>
+
+					<p>Inlcude script</p>
+
+					<pre>bower_components/angular_georgian_keyboard/src/angular_georgian_keyboard.js</pre>
+					
+					<p>Include in your app</p>
+
+					<pre>angular.module('myApp', ['GoergianKeyboard']);</pre>
+
+					<h2>Usage</h2>
+
+					<p>You can pass true/false to enable/disable georgian keyboard</p>
+
+					<pre>input type="text" ng-model="input" geo-kbd="enabled"</pre>
 				</div>
 			</div>
 		</div>
