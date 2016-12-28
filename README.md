@@ -3,6 +3,10 @@
 A simple angular directive for geo kbd.
 
 # Install
+Install with bower
+```
+bower install angular_georgian_keyboard
+```
 Inlcude script
 ```html
 <script src="bower_components/angular_georgian_keyboard/src/angular_georgian_keyboard.js"></script>
