@@ -1,5 +1,6 @@
 {
   "name": "angular georgian keyboard",
+  "homepage": "https://github.com/shakogegia/angular_georgian_keyboard",
   "authors": [
     "Shalva gegia <shalva.gegia@gmail.com>"
   ],
@@ -13,5 +14,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+      "angular": "~1.x"
+  }
 }
