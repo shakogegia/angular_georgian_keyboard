@@ -1,0 +1,17 @@
+{
+  "name": "angular georgian keyboard",
+  "authors": [
+    "Shalva gegia <shalva.gegia@gmail.com>"
+  ],
+  "description": "Georgian Keyboard for angular",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
