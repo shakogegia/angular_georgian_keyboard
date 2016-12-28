@@ -3,9 +3,9 @@ angular.module('GoergianKeyboard', []).directive('geoKbd', ['$parse', function($
 		scope: {
 			geoKbd: '=',
 			ngModel: '=',
-		}, // {} = isolate, true = child, false/undefined = no change
-		require: '?ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
-		restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
+		},
+		require: '?ngModel',
+		restrict: 'A',
 		link: function(scope, element, attrs, ngModelCtrl) {
 			var enabled = Boolean(attrs.geoKbd);
 			
@@ -52,22 +52,21 @@ angular.module('GoergianKeyboard', []).directive('geoKbd', ['$parse', function($
             });
 
 			function setSelectionRange(input, selectionStart, selectionEnd) {
-			    if (input.setSelectionRange) {
-			        input.focus();
-			        input.setSelectionRange(selectionStart, selectionEnd);
-			    } else if (input.createTextRange) {
-			        var range = input.createTextRange();
-			        range.collapse(true);
-			        range.moveEnd('character', selectionEnd);
-			        range.moveStart('character', selectionStart);
-			        range.select();
-			    }
+				if (input.setSelectionRange) {
+					input.focus();
+					input.setSelectionRange(selectionStart, selectionEnd);
+				} else if (input.createTextRange) {
+					var range = input.createTextRange();
+					range.collapse(true);
+					range.moveEnd('character', selectionEnd);
+					range.moveStart('character', selectionStart);
+					range.select();
+				}
 			}
 
 			function setCaretToPos(input, pos) {
 			    setSelectionRange(input, pos, pos);
 			}
-
 
             function isLetter(str) {
 				return str.length === 1 && str.match(/[a-z]/i);
