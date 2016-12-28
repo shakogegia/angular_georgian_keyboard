@@ -1,8 +1,8 @@
-## Angular Directive for Georgian Keyboard
+# Angular Directive for Georgian Keyboard
 
 A simple angular directive for geo kbd.
 
-# Install
+## Install
 Install with bower
 ```
 bower install angular_georgian_keyboard
@@ -15,7 +15,7 @@ Include in your app
 ```js
 angular.module('myApp', ['GoergianKeyboard']);
 ```
-# Usage
+## Usage
 You can pass ```true/false``` to enable/disable georgian keyboard
 ```html
 <input type="text" ng-model="input" geo-kbd="enabled">
