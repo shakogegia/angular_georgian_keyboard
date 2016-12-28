@@ -1,21 +1,11 @@
 angular.module('GoergianKeyboard', []).directive('geoKbd', ['$parse', function($parse){
-	// Runs during compile
 	return {
-		// name: '',
-		// priority: 1,
-		// terminal: true,
 		scope: {
 			geoKbd: '=',
 			ngModel: '=',
 		}, // {} = isolate, true = child, false/undefined = no change
-		// controller: function($scope, $element, $attrs, $transclude) {},
 		require: '?ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
 		restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
-		// template: '',
-		// templateUrl: '',
-		// replace: true,
-		// transclude: true,
-		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
 		link: function(scope, element, attrs, ngModelCtrl) {
 			var enabled = Boolean(attrs.geoKbd);
 			
@@ -40,9 +30,6 @@ angular.module('GoergianKeyboard', []).directive('geoKbd', ['$parse', function($
 
                 event.preventDefault();
 
-                // console.log(document.selection);
-                // console.log(document.selection.createRange());
-
                 var geChar = translate(code);
 
                 var input = this, pos = this.selectionStart;
@@ -52,27 +39,16 @@ angular.module('GoergianKeyboard', []).directive('geoKbd', ['$parse', function($
                     var end = this.selectionEnd;
                     var prefix = this.value.substring(0, start);
                     var suffix = this.value.substring(end, this.value.length);
-                    var scrollTop = this.scrollTop;
 
                     this.value = prefix + geChar + suffix;
-                    // this.focus();
-                    // this.selectionStart = start + text.length;
-                    // this.selectionEnd = end + text.length;
-                    // this.scrollTop = scrollTop;
                 } else {
                     this.value += geChar;
-                    console.log('Append at last...');
                 }
-
-                // console.log(event);
 
             	updateView(this.value);
             	updateModel(this.value);
 				
 				setCaretToPos(input, pos+1);
-
-                // element.trigger('keydown')
-                // element.trigger('keydown')
             });
 
 			function setSelectionRange(input, selectionStart, selectionEnd) {
