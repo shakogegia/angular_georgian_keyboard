@@ -7,7 +7,8 @@ angular.module('GoergianKeyboard', []).directive('geoKbd', ['$parse', function($
 		require: '?ngModel',
 		restrict: 'A',
 		link: function(scope, element, attrs, ngModelCtrl) {
-			var enabled = Boolean(attrs.geoKbd);
+			
+			var enabled = attrs.geoKbd ? Boolean(attrs.geoKbd) : true;
 			
 			function updateView(value) {
 				ngModelCtrl.$setViewValue(value);
